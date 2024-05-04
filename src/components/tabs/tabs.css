@@ -1,0 +1,30 @@
+/* styles.css */
+
+/* Existing styles... */
+
+/* Tab styles */
+.tabs {
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  color: #000000;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+.tabs button:not(:last-child) {
+  border-right: none;
+}
+
+.tabs button.active {
+  background-color: #a1a0dc;
+}
+
+.tabs button:hover {
+  background-color: #a1a0dc;
+}
