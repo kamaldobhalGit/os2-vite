@@ -33,12 +33,12 @@ const router = createBrowserRouter([
     element: (
       <>
         <TopNav />
-        <Tabs />
+        <Tabs />      //to load tabsUI with counts of dispatch
       </>
     ),
     children: [
       {
-        path: "",
+        path: "",     // this child is added to handle default listing
         loader: async (loader: LoaderArgs) => {
           return await tableLoader(
             loader.params.currentTab ||
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         Component: Table,
       },
       {
-        path: ":currentTab/:size",
+        path: ":currentTab/:size",      // this child is added to handle listing with different status
         loader: async (loader: LoaderArgs) => {
           return await tableLoader(
             loader.params.currentTab ||
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/dispatch/:size",
+    path: "/dispatch/:size",      //this route is added to test navbar with two differtent UI, dispatch count tab dont show up here
     loader: async (loader: LoaderArgs) => {
       return await tableLoader(DISPATCH_STATUS.CREATED, loader.params.size);
     },
