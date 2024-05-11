@@ -17,12 +17,15 @@ export default function LoginPage() {
 
   return (
     <div>
-      <p>You must log in to view the page at {from}</p>
+      <p>You must log in to view the page at </p>
 
       <Form method="post" replace>
         <input type="hidden" name="redirectTo" value={from} />
         <label>
           Username: <input name="userName" />
+        </label>{" "}
+        <label>
+          password: <input name="password" type="password"/>
         </label>{" "}
         <button type="submit" disabled={isLoggingIn}>
           {isLoggingIn ? "Logging in..." : "Login"}

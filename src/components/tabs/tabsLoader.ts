@@ -1,12 +1,14 @@
+import { redirect } from "react-router-dom";
 import dispatchHttpClient from "../../clients/http/dispatch.client";
 import { DispatchCountByStatus } from "../../interfaces/dispatch.interface";
 import { DISPATCH_STATUS } from "../../utils/constant";
+import { validateUserAuthentication } from "../../utils/helper";
 
 const tabsLoader = async (): Promise<DispatchCountByStatus> => {
+  if (!validateUserAuthentication()) redirect("/login");
   const { data: dispatchCountData } =
     await dispatchHttpClient.fetchDispatchCount();
   // Group counts by status
-  console.log("dispatchCountData....", dispatchCountData);
   const countsByStatus = {
     [DISPATCH_STATUS.CREATED]: dispatchCountData
       .filter((countData) => countData.status === DISPATCH_STATUS.CREATED)

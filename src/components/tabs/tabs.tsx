@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { DISPATCH_STATUS } from "../../utils/constant";
-import "./tabs.css";
 import {
   Outlet,
   useLoaderData,
@@ -8,6 +6,8 @@ import {
   useParams,
 } from "react-router-dom";
 import { DispatchCountByStatus } from "../../interfaces/dispatch.interface";
+import { DISPATCH_STATUS } from "../../utils/constant";
+import "./tabs.css";
 
 export default function Tabs() {
   const [currentTab, setCurrentTab] = useState(DISPATCH_STATUS.CREATED);

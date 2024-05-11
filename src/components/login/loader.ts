@@ -1,5 +1,9 @@
-import { userData } from "../../utils/helper";
-
 export default function LoginLoader() {
-  return userData || null;
+  const authToken = localStorage.getItem("authToken");
+  if (!authToken) return null;
+  return {
+    id: localStorage.getItem("userId"),
+    userName: localStorage.getItem("userName"),
+    authToken,
+  };
 }

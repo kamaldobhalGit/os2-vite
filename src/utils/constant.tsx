@@ -11,5 +11,6 @@ export enum DISPATCH_STATUS_LABEL {
 }
 
 export const BASE_URLS = {
-  DISPATCH_SERVICE: 'http://localhost:3001/dispatch'
+  DISPATCH_SERVICE: 'http://localhost:3001/dispatch',
+  LOGIN_SERVICE: 'http://localhost:3001/login'
 }

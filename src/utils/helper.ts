@@ -19,3 +19,8 @@ export const userData: UserData = {
     userData.name = "";
   },
 };
+
+export const validateUserAuthentication = () => {
+  if (localStorage.getItem("authToken")) return true;
+  return false;
+};

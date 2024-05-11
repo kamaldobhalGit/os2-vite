@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./table.css";
-import { DISPATCH_STATUS, DISPATCH_STATUS_LABEL } from "../../utils/constant";
-import { Dispatch } from "../../interfaces/dispatch.interface";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { Dispatch } from "../../interfaces/dispatch.interface";
+import { DISPATCH_STATUS, DISPATCH_STATUS_LABEL } from "../../utils/constant";
+import "./table.css";
 
 const statusCssFinder = (status: string) => {
   switch (status) {
@@ -17,7 +17,6 @@ const statusCssFinder = (status: string) => {
 
 export default function Table() {
   const dispatchList = useLoaderData() as Dispatch[];
-  console.log("dispatchList...", dispatchList);
   let { size, currentTab } = useParams();
   const navigate = useNavigate();
   const [rowsPerPage, setRowsPerPage] = useState(size);
